@@ -24,7 +24,7 @@ class Example extends React.Component {
     const { code, description, name } = this.props.example;
 
     // Use CommonJS require to dynamically require because ES Modules must be statically analyzable
-    const ExampleComponent = require(`../examples/${this.props.componentName}/${name}`).default;
+    const ExampleComponent = require(`./examples/${this.props.componentName}/${name}`).default;
     return (
       <div className="example">
         { description && <h4> {description} </h4>}
