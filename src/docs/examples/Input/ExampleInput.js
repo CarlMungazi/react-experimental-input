@@ -1,5 +1,5 @@
 import React from 'react';
-import Input from '../../../components/Input/Input';
+import Input from 'react-input/Input';
 
 export default function InputExample() {
   return <Input />
