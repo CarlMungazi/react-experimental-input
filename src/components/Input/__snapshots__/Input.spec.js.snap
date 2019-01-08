@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`it creates an input element 1`] = `
+<div>
+  <input
+    minLength=""
+    onChange={[Function]}
+    placeholder="Enter your text here"
+    required={false}
+    type="text"
+    value=""
+  />
+</div>
+`;
