@@ -1,5 +1,5 @@
 {
-  "name": "react-input",
+  "name": "react-experimental-input",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -53,14 +53,21 @@
     "webpack-manifest-plugin": "2.0.4",
     "workbox-webpack-plugin": "3.6.2"
   },
+  "homepage": "http://carlmungazi.github.io/react-experimental-input",
   "scripts": {
     "prestart": "npm run gen:docs",
     "start": "npm-run-all --parallel start:docs gen:docs-watch",
     "start:docs": "node scripts/start.js",
     "gen:docs": "node scripts/generateComponentData.js",
     "gen:docs-watch": "npm run gen:docs -- --watch",
-    "build": "node scripts/build.js",
-    "test": "node scripts/test.js"
+    "build:docs": "node scripts/build.js",
+    "test": "node scripts/test.js --env=jsdom",
+    "build:css": "cpx \"./src/components/**/*.css\" ./lib",
+    "prebuild:lib": "rimraf lib",
+    "build:lib": "npm run build:commonjs && npm run build:css",
+    "predeploy:docs": "npm run build:docs",
+    "deploy:docs": "gh-pages -d build",
+    "build:commonjs": "cross-env NODE_ENV=production babel ./src/components --out-dir ./lib --ignore spec.js"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -110,17 +117,29 @@
   },
   "babel": {
     "presets": [
+      [
+        "@babel/preset-env",
+        {
+          "modules": "commonjs"
+        }
+      ],
       "react-app"
     ]
   },
   "devDependencies": {
+    "@babel/preset-env": "^7.2.3",
+    "babel-cli": "^6.24.1",
     "chokidar": "^2.0.4",
+    "cpx": "^1.5.0",
+    "cross-env": "^4.0.0",
     "enzyme": "^3.8.0",
     "enzyme-adapter-react-15": "^1.2.0",
+    "gh-pages": "^0.12.0",
     "npm-run-all": "^4.1.3",
     "prop-types": "^15.6.2",
     "react-addons-test-utils": "^15.5.1",
     "react-docgen": "^2.21.0",
-    "react-test-renderer": "^15.5.4"
+    "react-test-renderer": "^15.5.4",
+    "rimraf": "^2.6.1"
   }
 }
