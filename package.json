@@ -118,7 +118,7 @@
   "babel": {
     "presets": [
       [
-        "env",
+        "@babel/preset-env",
         {
           "modules": "commonjs"
         }
@@ -127,6 +127,7 @@
     ]
   },
   "devDependencies": {
+    "@babel/preset-env": "^7.2.3",
     "babel-cli": "^6.24.1",
     "chokidar": "^2.0.4",
     "cpx": "^1.5.0",
