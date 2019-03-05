@@ -1,5 +1,5 @@
 import React from 'react';
-import ProgressBar from ''react-experimental-input'/ProgressBar';
+import ProgressBar from 'react-experimental-input/ProgressBar';
 
 /** Show 70% progress */
 export default function Example70Percent() {
