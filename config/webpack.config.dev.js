@@ -141,7 +141,7 @@ module.exports = {
       // Support React Native Web
       // https://www.smashingmagazine.com/2016/08/a-glimpse-into-the-future-with-react-native-for-web/
       'react-native': 'react-native-web',
-      'react-input': path.resolve(__dirname, '../src/components') // we are doing this so our input paths for components are short and reflective of production usage
+      'react-experimental-input': path.resolve(__dirname, '../src/components') // we are doing this so our input paths for components are short and reflective of production usage
     },
     plugins: [
       // Adds support for installing with Plug'n'Play, leading to faster installs and adding

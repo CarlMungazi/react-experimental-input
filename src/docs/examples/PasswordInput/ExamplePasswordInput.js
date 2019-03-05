@@ -1,5 +1,5 @@
 import React from 'react';
-import PasswordInput from 'react-input/PasswordInput';
+import PasswordInput from 'react-experimental-input/PasswordInput';
 
 /** Show all features */
 class ExamplePasswordInput extends React.Component {
