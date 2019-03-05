@@ -1,6 +1,6 @@
 {
   "name": "react-experimental-input-build-template",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "main": "./lib/index.js",
   "private": true,
   "engines": {
