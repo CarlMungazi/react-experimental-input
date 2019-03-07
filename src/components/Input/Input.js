@@ -9,7 +9,7 @@ function Input({error, children, ...props}) {
         {...props} 
       />
       { children }
-      { error && <div style={{color: "red"}}> {error} </div> }
+      { error && <div> {error} </div> }
     </div>
   );
 }
@@ -38,7 +38,11 @@ Input.propTypes = {
   /**
    * The placeholder
    */
-  placeholder: PropTypes.string
+  placeholder: PropTypes.string,
+  /**
+   * Additional styles
+   */
+  style: PropTypes.shape({})
 }
 
 Input.defaultProps = {
@@ -47,7 +51,8 @@ Input.defaultProps = {
   value: "",
   minLength: "",
   required: false,
-  placeholder: "Enter your text here"
+  placeholder: "Enter your text here",
+  style: {}
 }
 
 export default Input;

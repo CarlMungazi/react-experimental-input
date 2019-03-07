@@ -7,6 +7,7 @@ exports[`it creates an input element 1`] = `
     onChange={[Function]}
     placeholder="Enter your text here"
     required={false}
+    style={Object {}}
     type="text"
     value=""
   />
