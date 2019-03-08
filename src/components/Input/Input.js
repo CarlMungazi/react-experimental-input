@@ -9,40 +9,34 @@ function Input({error, children, ...props}) {
         {...props} 
       />
       { children }
-      { error && <div> {error} </div> }
+      { error && <div className="input-error"> {error} </div> }
     </div>
   );
 }
 
 Input.propTypes = {
-  /**
-   * The type of input 
-   */
-  type: PropTypes.string,
-  /**
-   * The callback to invoke when the input value is changed 
-   */
+  /** The name attribute */
+  name: PropTypes.string,
+  /** The input id */
+  id: PropTypes.string,
+  /** The type of input */
+  type: PropTypes.oneOf(['text', 'number', 'password']),
+  /** The callback to invoke when the input value is changed */
   onChange: PropTypes.func,
-  /**
-   * The input value
-   */
+  /** The input value */
   value: PropTypes.string,
-  /**
-   * The minimum number of characters allowed
-   */
+  /** The minimum number of characters allowed */
   minLength: PropTypes.string,
-  /**
-   * Is the input optional?
-   */
+  /** Is the input optional? */
   required: PropTypes.bool,
-  /**
-   * The placeholder
-   */
+  /** The placeholder */
   placeholder: PropTypes.string,
-  /**
-   * Additional styles
-   */
-  style: PropTypes.shape({})
+  /** Additional styles */
+  style: PropTypes.shape({}),
+  /** String to display when error occurs */
+  error: PropTypes.string,
+  /** Child component to display next to the input */
+  children: PropTypes.node,
 }
 
 Input.defaultProps = {
@@ -52,7 +46,11 @@ Input.defaultProps = {
   minLength: "",
   required: false,
   placeholder: "Enter your text here",
-  style: {}
+  style: {},
+  error: '',
+  children: null,
+  name: '',
+  id: ''
 }
 
 export default Input;

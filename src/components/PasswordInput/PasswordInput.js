@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import ProgressBar from '../ProgressBar';
 import Icon from '../Icon';
 import Input from '../Input';
@@ -36,7 +35,7 @@ class PasswordInput extends React.Component {
       >
         {
           showVisibilityToggle &&
-          <a href="" onClick={this.toggleShowPassword} style={{ marginLeft: 5 }}> <Icon /> </a>
+          <button href="" onClick={this.toggleShowPassword} style={{ marginLeft: 5 }}> <Icon /> </button>
         }
         {
           value.length > 0 && quality && <ProgressBar percent={quality} width={130} />
