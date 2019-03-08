@@ -3,7 +3,9 @@
 exports[`it creates an input element 1`] = `
 <div>
   <input
+    id=""
     minLength=""
+    name=""
     onChange={[Function]}
     placeholder="Enter your text here"
     required={false}
@@ -11,5 +13,29 @@ exports[`it creates an input element 1`] = `
     type="text"
     value=""
   />
+  
+</div>
+`;
+
+exports[`it renders error messages 1`] = `
+<div>
+  <input
+    id=""
+    minLength=""
+    name=""
+    onChange={[Function]}
+    placeholder="Enter your text here"
+    required={false}
+    style={Object {}}
+    type="text"
+    value=""
+  />
+  <div
+    className="input-error"
+  >
+     
+    This is an error
+     
+  </div>
 </div>
 `;

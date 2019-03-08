@@ -17,7 +17,7 @@ test('toggle input type when show/hide password is clicked', () => {
   expect(wrapper.find({type: "text"})).toHaveLength(0);
 
   // Password input should have a type of text after clicking toggle
-  wrapper.find('a').simulate('click');
+  wrapper.find('button').simulate('click');
   expect(wrapper.find({type: "password"})).toHaveLength(0);
   expect(wrapper.find({type: "text"})).toHaveLength(1);
 })
